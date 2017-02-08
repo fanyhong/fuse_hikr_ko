@@ -1,0 +1,14 @@
+<App>
+    <ClientPanel>
+        <JavaScript>
+            var name = "Tricky Trails";
+            module.exports = {
+                name: name
+            };
+        </JavaScript>
+
+        <StackPanel>
+            <Text Value="{name}" />
+        </StackPanel>
+    </ClientPanel>
+</App>
