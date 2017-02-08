@@ -1,5 +1,9 @@
 <App>
     <ClientPanel>
-        <EditHikePage />
+        <!--PageControl 하위요소로 Page 들을 넣어 스와이프하여 페이지가 변경되도록 함-->
+        <PageControl>
+            <HomePage />
+            <EditHikePage />
+        </PageControl>
     </ClientPanel>
 </App>
