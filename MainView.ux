@@ -7,9 +7,10 @@
     <Router ux:Name="router" />
     <ClientPanel>
         <!--Navigator 는 PageControl 과 유사한 네비게이션 컨테이너이지만, 자식 요소 컴포넌트들을 인스턴스화하기 위한 템플릿들을 사용하여 시스템 리소스를 절약한다는 차이가 있음 -->
-        <Navigator DefaultPath="Home">
+        <Navigator DefaultPath="splash">
             <!--HomePage 내에서 router 이름을 가진 Router를 dependency로 사용하므로, router="router" 로 주입될 디펜던시를 지정 -->
-            <HomePage ux:Template="Home" router="router" />
+            <SplashPage ux:Template="splash" router="router" />
+            <HomePage ux:Template="home" router="router" />
             <EditHikePage ux:Template="editHike" router="router" />
         </Navigator>
     </ClientPanel>

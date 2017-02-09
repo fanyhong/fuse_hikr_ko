@@ -1,6 +1,7 @@
-<Panel ux:Class="hikr.Button" Margin="10" Padding="10">
+<Panel ux:Class="hikr.Button" Margin="10" Padding="10" FontSize="16">
     <!--커스텀 프로퍼티를 생성-->
     <string ux:Property="Text" />
+    <string ux:Property="FontSize" />
 
     <!--직사각형 배경에 그림자를 배치하여 버튼 모양을 만듬-->
     <Rectangle Layer="Background" Color="#125F63" CornerRadius="4"> 
@@ -8,7 +9,7 @@
     </Rectangle>
 
     <!--커스텀 프로퍼티 Text 를 사용하여 값을 지정 (프로퍼티 바인딩)-->
-    <hikr.Text Value="{Property Text}" FontSize="16" TextAlignment="Center" />
+    <hikr.Text Value="{Property Text}" FontSize="{Property FontSize}" TextAlignment="Center" />
     
     <!--눌리는 동안 애니메이션 처리-->
     <WhilePressed>
