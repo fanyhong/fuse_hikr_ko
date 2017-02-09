@@ -1,13 +1,14 @@
 <!--ux:Class 를 사용하여 커스텀 컴포넌트 생성-->
 <Page ux:Class="EditHikePage">
+    
+    <!--디펜던시 라우터 router를 추가-->
+    <Router ux:Dependency="router" />
 
     <!--별도의 파일로 분리한 Javascript를 import 함-->
     <JavaScript File="EditHikePage.js" />
 
     <ScrollView>
         <StackPanel>
-
-
             <Text>Name: </Text>
             <TextBox Value="{name}" />
 
@@ -22,6 +23,8 @@
 
             <Text>Comments:</Text>
             <TextView Value="{comments}"  TextWrapping="Wrap"/>
+
+            <Button Text="Back" Clicked="{goBack}" />
         </StackPanel>
     </ScrollView>
 </Page>
