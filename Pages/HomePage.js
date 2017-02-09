@@ -1,4 +1,5 @@
-var hikes = require("hikes"); // hikes.js 를 import
+// 백엔드로 부터 hikes 데이터를 가져 올 Context 모듈을 import
+var Context = require("Modules/Context"); 
 
 // Each 안의 버튼이 클릭되면 호출 (이때 arg 를 인수로 받을 수 있음)
 function goHike(arg){
@@ -10,7 +11,7 @@ function goHike(arg){
 
 // 외부에서 접근이 가능하도록 내보내기
 module.exports = {
-    hikes: hikes,
+    hikes: Context.hikes,
 
     goHike: goHike
 };
