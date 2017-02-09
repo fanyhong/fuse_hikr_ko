@@ -1,4 +1,9 @@
-<App>
+<App Background="#022328">
+
+    <!--디바이스에따른 상태표시줄 스타일 설정-->
+    <iOS.StatusBarConfig Style="Light" />
+    <Android.StatusBarConfig Color="#022328" />
+
     <Router ux:Name="router" />
     <ClientPanel>
         <!--Navigator 는 PageControl 과 유사한 네비게이션 컨테이너이지만, 자식 요소 컴포넌트들을 인스턴스화하기 위한 템플릿들을 사용하여 시스템 리소스를 절약한다는 차이가 있음 -->

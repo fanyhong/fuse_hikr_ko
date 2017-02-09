@@ -1,5 +1,5 @@
 <!--ux:Class 를 사용하여 커스텀 컴포넌트 생성-->
-<Page ux:Class="EditHikePage">
+<hikr.Page ux:Class="EditHikePage">
     
     <!--디펜던시 라우터 router를 추가-->
     <Router ux:Dependency="router" />
@@ -7,26 +7,46 @@
     <!--별도의 파일로 분리한 Javascript를 import 함-->
     <JavaScript File="EditHikePage.js" />
 
-    <ScrollView>
-        <StackPanel>
-            <Text>Name: </Text>
-            <TextBox Value="{name}" />
+    <DockPanel>
 
-            <Text>Location:</Text>
-            <TextBox Value="{location}" />
+        <!--Grid 로 한 라인에 두개의 버튼을 배치하고 DockPanel 안에 Dock="Bottom" 을 지정하여 항상 Bottom에 위치시킴-->
+        <Grid ColumnCount="2" Dock="Bottom">
+            <hikr.Button Text="Cancel" Clicked="{cancel}" />
+            <hikr.Button Text="Save" Clicked="{save}" />
+        </Grid>
 
-            <Text>Distance (km):</Text>
-            <TextBox Value="{distance}" InputHint="Decimal" />
+        <ScrollView>
+            <StackPanel ItemSpacing="10" Padding="10">
 
-            <Text>Rating:</Text>
-            <TextBox Value="{rating}" InputHint="Integer" />
+                <hikr.Text ux:Class="TitleText" Opacity=".6" Margin="0,0,0,5" />
+                
+                
+                <StackPanel>
+                    <TitleText>Name:</TitleText>
+                    <TextBox TextColor="White" CaretColor="White" Padding="10,10,0,10" Value="{name}" />
+                </StackPanel>
 
-            <Text>Comments:</Text>
-            <TextView Value="{comments}"  TextWrapping="Wrap"/>
+                <StackPanel>
+                    <TitleText>Location:</TitleText>
+                    <hikr.TextBox Value="{location}" />
+                </StackPanel>
 
-            <Button Text="Save" Clicked="{save}" />
-            <Button Text="Cancel" Clicked="{cancel}" />
-            
-        </StackPanel>
-    </ScrollView>
-</Page>
+                <StackPanel>
+                    <TitleText>Distance (km):</TitleText>
+                    <hikr.TextBox Value="{distance}" InputHint="Decimal" />
+                </StackPanel>
+
+                <StackPanel>
+                    <TitleText>Rating:</TitleText>
+                    <hikr.TextBox Value="{rating}" InputHint="Integer" />
+                </StackPanel>
+
+                <StackPanel>
+                    <TitleText>Comments:</TitleText>
+                    <hikr.TextView Value="{comments}" TextWrapping="Wrap" />
+                </StackPanel>
+
+            </StackPanel>
+        </ScrollView>
+    </DockPanel>
+</hikr.Page>
